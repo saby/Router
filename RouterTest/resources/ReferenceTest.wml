@@ -1,0 +1,7 @@
+<Router._private.Reference
+    name="reference"
+    state="{{ _options.state }}"
+    href="{{ _options.href }}"
+    location="{{ _location || _options.location }}">
+        <a href="{{ content.href }}">link</a>
+</Router._private.Reference>

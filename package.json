@@ -1,0 +1,46 @@
+{
+   "name": "Router",
+   "version": "24.4100.0",
+   "repository": {
+      "type": "git",
+      "url": "git@git.sbis.ru:saby/router.git"
+   },
+   "files": [
+      "Router/*"
+   ],
+   "scripts": {
+      "build": "npm run build:typescript && npm run build:app",
+      "build:typescript": "wasaby-cli initTSEnv",
+      "build:app": "wasaby-cli buildProject --copy --umd",
+      "build:watch": "wasaby-cli buildProject --copy --umd --watcher",
+      "compile": "saby-typescript --compiler",
+      "start": "wasaby-cli startServer",
+      "test": "wasaby-cli runUnitTests --report=console",
+      "test:pattern": "wasaby-cli runUnitTests --report=console --testPathPattern=RouterTest/Route.test",
+      "test:coverage": "wasaby-cli runUnitTests --coverage",
+      "lint": "eslint .",
+      "lint:fix": "eslint . --fix",
+      "lint:css": "stylelint \"**/*.{css,less}\"",
+      "lint:css:fix": "stylelint \"**/*.{css,less}\" --fix",
+      "prettier": "prettier --write .",
+      "prepare": "npm run update-cli-store && npm run build:typescript && wasaby-cli initGitHooks",
+      "update-cli-store": "wasaby-cli loadProject"
+   },
+   "wasaby-cli": {
+      "port": 777,
+      "rootModule": "RouterDemo",
+      "preCommitHooks": [
+         "Prettier",
+         "ESLint",
+         "Stylelint"
+      ]
+   },
+   "dependencies": {},
+   "devDependencies": {
+      "body-parser": "^1.18.3",
+      "cookie-parser": "^1.4.3",
+      "express": "^4.16.3",
+      "requirejs": "2.1.18",
+      "wasaby-cli": "git+https://git.sbis.ru/saby/wasaby-cli.git#rc-24.4100"
+   }
+}

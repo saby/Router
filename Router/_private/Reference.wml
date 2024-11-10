@@ -1,0 +1,7 @@
+<ws:partial
+   template="{{ _options.content }}"
+   href="{{ _href || _state }}"
+   on:mousedown="_mousedownHandler()"
+   on:click="_clickHandler()"
+   on:mouseover="_mouseoverHandler()"
+   onMouseOverCallback="{{_mouseoverHandler}}" />
