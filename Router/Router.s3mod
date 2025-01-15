@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<ui_module for_cdn="0" id="a857d050-c754-4d39-90ec-fca5e2ddf022" name="Router" kaizen_zone="4ffaea04-d83a-4b80-ad28-18d4ab9c3e06" package="Wasaby" required="1" autodoc="1" responsible="Мустафин Л.И." responsible_uuid="11f1d1c5-8d45-4bc0-bcd7-9745bf8ddebc" version="1.00">
+
+  <description>Библиотека, предназначенная для определения правил построения приложения в зависимости от URL запроса. Решает задачи построения страницы на сервере и организации SPA-переходов при навигации на клиенте.</description>
+
+  <depends>
+    <module id="0f5d26db-dd61-4957-9375-8861ad66f219" name="Vdom"/>
+    <module id="10efeac7-0f02-4c73-9474-0d1d0db077b6" name="View"/>
+    <module id="323fd54f-1fab-42a6-8aea-6726d6392d53" name="Application"/>
+    <module id="636177e5-4d75-44fa-9173-977dc90ff111" name="Env"/>
+    <module id="686f183d-0bcc-4732-b4e4-6016c2a67a0f" name="Types"/>
+    <module id="a5e32491-7b02-45b1-b65d-53e9723ec0cd" name="React"/>
+    <module id="f27abe12-19df-4c9f-b886-634bd20a0011" name="UI"/>
+    <module id="1456f36f-76ef-4323-a2dd-a22bc91e7209" name="Compiler"/>
+  </depends>
+
+  <load_after/>
+
+  <parameters/>
+
+  <resources/>
+
+  <preload/>
+
+  <typescript>
+    <arg key="typecheck" value="1"/>
+  </typescript>
+</ui_module>

@@ -1,0 +1,9 @@
+{
+  "ui-modules":
+  [
+    "Router"
+  ],
+  "bl-modules":
+  [
+  ]
+}

@@ -1,0 +1,18 @@
+<div>
+   <h1>Single Page Routing</h1>
+   <p>
+      Это пример того, как делать SP переход для переключения между разными вкладками, используя <span class="CodeSpan">Router.Route</span>
+      и <span class="CodeSpan">Router.Reference</span>.
+   </p>
+   <p>
+      Блок ниже представляет собой компонент <span class="CodeSpan">RouterDemo.resources.TabsBlock</span>,
+      которому передается параметр <span class="CodeSpan">selectedTab</span>.
+      Этот параметр извлекается из URL-адреса при помощи <span class="CodeSpan">Router.Route</span>,
+      который обернут вокруг блока вкладок. Затем переданный параметр используется для отображения текущей выбранной вкладки.
+   </p>
+
+   <!-- Параметр selectedTab будет доступен внутри TabsBlock т.к. модуль обернут в Router.Route -->
+   <Router.router:Route mask="selectedTab/:selectedTab">
+      <RouterDemo.resources.TabsBlock />
+   </Router.router:Route>
+</div>
