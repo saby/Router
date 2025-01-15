@@ -1,0 +1,7 @@
+<Router.router:Reference
+    name="reference"
+    state="{{ _options.state }}"
+    href="{{ _options.href }}"
+    location="{{ _options.location }}">
+        <ws:partial template="{{ _options.content }}" href="{{ content.href }}"/>
+</Router.router:Reference>

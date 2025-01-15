@@ -1,0 +1,7 @@
+<UI.Bootstrap title="Демо страница статичного шаблона">
+    <ws:content>
+        <div>
+            Эта страница собрана билдером. Она строится и оживает в div.
+        </div>
+    </ws:content>
+</UI.Bootstrap>

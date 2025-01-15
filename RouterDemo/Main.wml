@@ -1,0 +1,53 @@
+<div>
+   <nav class="TopMenu__container">
+      <ul class="TopMenu">
+         <li class="TopMenu__Item">
+            <Router.router:Reference state="/RouterDemo/page/:pageId" pageId="Intro" attr:class="TopMenu__Link">
+               <a href="{{ content.href }}">Intro</a>
+            </Router.router:Reference>
+         </li>
+         <li class="TopMenu__Item">
+            <Router.router:Reference state="/RouterDemo/page/:pageId" pageId="SPRouting" attr:class="TopMenu__Link">
+               <a href="{{ content.href }}">SP Routing</a>
+            </Router.router:Reference>
+         </li>
+         <li class="TopMenu__Item">
+            <Router.router:Reference state="/RouterDemo/page/:pageId?query=:queryId" pageId="Masks" queryId="query" attr:class="TopMenu__Link">
+               <a href="{{ content.href }}">Query Masks</a>
+            </Router.router:Reference>
+         </li>
+         <li class="TopMenu__Item">
+            <Router.router:Reference state="/RouterDemo/page/:pageId#fragment=:fragmentId" pageId="Masks" fragmentId="fragment" attr:class="TopMenu__Link">
+               <a href="{{ content.href }}">Fragment Masks</a>
+            </Router.router:Reference>
+         </li>
+         <li class="TopMenu__Item">
+            <Router.router:Reference state="/RouterDemo/:docId" docId="123456" attr:class="TopMenu__Link">
+               <a href="{{ content.href }}">RegExp In Root</a>
+            </Router.router:Reference>
+         </li>
+         <li class="TopMenu__Item">
+            <Router.router:Reference state="/RouterDemo/page/:pageId" pageId="AppInPage" attr:class="TopMenu__Link">
+               <a href="{{ content.href }}">App in page</a>
+            </Router.router:Reference>
+         </li>
+      </ul>
+   </nav>
+   <main class="ContentContainer">
+      <Router.router:Route mask="/RouterDemo/page/:pageId" getDataToRender="{{ _getDataToRender }}" >
+         <div>
+            <ws:if data="{{ content.pageId }}">
+               <RouterDemo.resources.PageLoader pageConfig="{{ content.pageConfig }}"/>
+            </ws:if>
+         </div>
+      </Router.router:Route>
+
+      <Router.router:Route mask="/RouterDemo/doc/:docId">
+         <div>
+            <ws:if data="{{ content.docId }}">
+               <RouterDemo.resources.RootRegExp />
+            </ws:if>
+         </div>
+      </Router.router:Route>
+   </main>
+</div>

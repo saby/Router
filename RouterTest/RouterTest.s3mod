@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<ui_module id="a857d050-c754-4d39-90ec-fca5e2ddf054" name="RouterTest" package="Wasaby" responsible="Мустафин Л.И." required="1" version="1.00">
+
+  <description>Router for WaSaby</description>
+
+    <depends>
+      <module id="a857d050-c754-4d39-90ec-fca5e2ddf022" name="Router"/>
+      <module id="a857d050-c754-4d39-90ec-fca5e2ddf033" name="RouterDemo"/>
+      <module id="f27abe12-19df-4c9f-b886-634bd20a0011" name="UI"/>
+    </depends>
+
+  <load_after/>
+
+  <test framework="Jest" />
+
+  <parameters/>
+
+  <resources/>
+
+  <preload/>
+
+  <typescript>
+    <arg key="typecheck" value="0"/>
+  </typescript>
+</ui_module>
