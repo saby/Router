@@ -1,0 +1,51 @@
+<div>
+   <h1>Демонстрация query и fragment параметров в маске</h1>
+
+   <p>
+      Это пример того, как в <span class="CodeSpan">Router.Route</span> и <span class="CodeSpan">Router.Reference</span> использовать query и fragment маски.
+   </p>
+
+   <Router.router:Route mask="?query=:queryId#fragment=fragmentId">
+      <div>
+         <p>
+            Кликая по списку ниже меняется значение параметра <span class="CodeSpan">{{ content.queryId ? 'queryId' : 'fragmentId' }}</span>.
+            Этот параметр извлекается из URL-адреса при помощи <span class="CodeSpan">Router.Route</span>,
+            который обернут вокруг контента. Затем переданный параметр используется для отображения содержимого страницы.
+         </p>
+         <ws:if data="{{ content.queryId }}">
+            <ul>
+               <li>
+                  <Router.router:Reference state="?query=queryId" queryId="query1">
+                     <a href="{{ content.href }}">Query 1</a>
+                  </Router.router:Reference>
+               </li>
+               <li>
+                  <Router.router:Reference state="?query=queryId" queryId="query2">
+                     <a href="{{ content.href }}">Query 2</a>
+                  </Router.router:Reference>
+               </li>
+            </ul>
+            <p>
+               queryId = {{ content.queryId }}
+            </p>
+         </ws:if>
+         <ws:else data="{{ content.fragmentId}}">
+            <ul>
+               <li>
+                  <Router.router:Reference state="#fragment=fragmentId" fragmentId="fragment1">
+                     <a href="{{ content.href }}">Fragment 1</a>
+                  </Router.router:Reference>
+               </li>
+               <li>
+                  <Router.router:Reference state="#fragment=fragmentId" fragmentId="fragment2">
+                     <a href="{{ content.href }}">Fragment 2</a>
+                  </Router.router:Reference>
+               </li>
+            </ul>
+            <p>
+               fragmentId = {{ content.fragmentId }}
+            </p>
+         </ws:else>
+      </div>
+   </Router.router:Route>
+</div>

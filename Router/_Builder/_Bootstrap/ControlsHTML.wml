@@ -1,0 +1,1 @@
+<ws:partial template="{{ moduleName }}" scope="{{ options }}" attr:key="bd_"/>
