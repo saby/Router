@@ -1,0 +1,7 @@
+{
+    "include": [
+      "Router/router",
+      "Router/CustomRouterJson"
+    ],
+    "output": "router.package.js"
+  }
