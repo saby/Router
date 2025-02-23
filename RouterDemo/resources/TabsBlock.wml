@@ -1,0 +1,32 @@
+<div class="TabsBlock">
+   <div class="TabsBlock__Tabs">
+      <ul>
+         <li class="TabsBlock__Tabs--Item {{ _selectedTabId == 0 ? 'TabsBlock__Tabs--ItemActive' }}">
+            <Router.router:Reference state="selectedTab/:selectedTab" selectedTab="0" attr:class="TabsBlock__Tabs--Link">
+               <a href="{{ content.href }}">Tab 0</a>
+            </Router.router:Reference>
+         </li>
+         <li class="TabsBlock__Tabs--Item {{ _selectedTabId == 1 ? 'TabsBlock__Tabs--ItemActive' }}">
+            <Router.router:Reference state="selectedTab/:selectedTab" selectedTab="1" attr:class="TabsBlock__Tabs--Link">
+               <a href="{{ content.href }}">Tab 1</a>
+            </Router.router:Reference>
+         </li>
+         <li class="TabsBlock__Tabs--Item {{ _selectedTabId == 2 ? 'TabsBlock__Tabs--ItemActive' }}">
+            <Router.router:Reference state="selectedTab/:selectedTab" selectedTab="2" attr:class="TabsBlock__Tabs--Link">
+               <a href="{{ content.href }}">Tab 2</a>
+            </Router.router:Reference>
+         </li>
+      </ul>
+   </div>
+   <div class="TabsBlock__Content">
+      <ws:if data="{{ _selectedTabId == 0 }}">
+         <p>Эта вкладка будет открыта по умолчанию или если будет задано некорректное значение в параметре <span class="CodeSpan">selectedTab</span></p>
+      </ws:if>
+      <ws:else data="{{ _selectedTabId == 1}}">
+         <p>Это содержимое вкладки "Tab 1".</p>
+      </ws:else>
+      <ws:else data="{{ _selectedTabId == 2}}">
+         <p>Это последняя вкладка. Попробуйте нажать кнопки "Назад" и "Вперед" в браузере, чтобы увидеть маршрутизацию одной страницы в действии.</p>
+      </ws:else>
+   </div>
+</div>

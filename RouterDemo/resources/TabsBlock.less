@@ -1,0 +1,43 @@
+.TabsBlock {
+   width: 650px;
+   height: 250px;
+   border: 1px solid #bbb;
+}
+
+.TabsBlock__Tabs {
+   border-bottom: 1px solid #eee;
+}
+
+/* stylelint-disable-next-line selector-max-type */
+.TabsBlock__Tabs ul {
+   list-style-type: none;
+   margin: 0;
+   padding: 0;
+   overflow: hidden;
+}
+
+.TabsBlock__Tabs--Item {
+   float: left;
+}
+
+.TabsBlock__Tabs--Item:hover {
+   background: #ddd;
+   border-bottom: 2px solid #ddd;
+}
+
+.TabsBlock__Tabs--ItemActive {
+   /* stylelint-disable-next-line declaration-no-important */
+   border-bottom: 2px solid var(--primary_color) !important;
+}
+
+.TabsBlock__Tabs--Link {
+   display: block;
+   text-align: center;
+   padding: 16px;
+   text-decoration: none;
+   color: var(--text-color);
+}
+
+.TabsBlock__Content {
+   padding: 16px;
+}
